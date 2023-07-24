@@ -1,0 +1,25 @@
+
+
+<div class="top-nav sticky-top">
+    <nav class="navbar navbar-light bg-light m-auto">
+      <div class="row w-100 pos-a">
+        <div class="col-md-8">
+          <button class="navbar-toggler" type="button" (click)="toggle()">
+            <i class="fa-solid fa-ellipsis-vertical icon-vertical" *ngIf="opened"></i>
+            <i class="fa-solid fa-ellipsis-vertical icon-vertical" *ngIf="!opened"></i>
+          </button>
+          <a  class="text-dash">{{title}}</a>
+        </div>
+        <div class="col-md-3 m-auto">
+         
+        <h5 class="" style="color:white;">  Hello &nbsp;{{adminname}}...</h5>
+        </div>
+        <!-- <div class="col-md-1 col-2">
+          <i class="fa-solid fa-bell user-icon"></i>
+        </div> -->
+        <div class="col-md-1 m-auto">
+          <button class="logout" (click)="logout()"><i class="fa-solid fa-power-off user-icon"></i></button>
+        </div>
+      </div>
+    </nav>
+  </div>
