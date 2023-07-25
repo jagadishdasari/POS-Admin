@@ -1,0 +1,15 @@
+table {
+    width: 100%;
+  }
+  .sty-btn{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+  }
+  .sty-btn button{
+    border: none;
+    border-radius: 3px;
+    background: #0a1e3c;
+    padding: 5px 18px;
+    color: white;
+  }

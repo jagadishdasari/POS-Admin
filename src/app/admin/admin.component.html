@@ -1,0 +1,88 @@
+
+
+<p>
+    <mat-toolbar>
+        <button mat-icon-button class="example-icon"  (click)="drawer.toggle()" aria-label="Example icon-button with menu icon">
+          <mat-icon>menu</mat-icon>
+        </button>
+  
+    <span>My App</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+     <mat-icon>share</mat-icon>
+   </button>
+  </mat-toolbar>
+  </p>
+  <mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+  
+  <div matRipple  class="profildiv text-center pt-3 ">
+    
+  </div>
+  
+  <p class="text-center text-light h5 my-2">  <small style="font-size: 13px;">Hello</small>, Deepak Patidar</p>
+  
+  <div class="text-center my-3">
+  
+    <mat-icon color="accent" class="mx-2" >account_circle</mat-icon>
+    <mat-icon color="accent">settings</mat-icon>
+    <mat-icon color="accent" class="mx-2">favorite_border</mat-icon>
+  </div>
+  
+  <div class="text-center">
+
+    <button mat-button class="text-light" [matMenuTriggerFor]="menu">POS</button>
+    <mat-menu #menu="matMenu">
+      <a mat-menu-item routerLink="/admin/product">Product Manger</a>
+      <button mat-menu-item>Supply Manger</button>  
+      <button mat-menu-item>Stock Manger</button> 
+      <button mat-menu-item>Stock Report</button> 
+      <button mat-menu-item>Purchase Manger</button> 
+      <button mat-menu-item>Purchase Report</button> 
+      <button mat-menu-item>Sales Manger</button> 
+      <button mat-menu-item>Sales Report </button> 
+      <button mat-menu-item>Production Manger</button> 
+      <button mat-menu-item>Production Report </button> 
+      <button mat-menu-item>Expense Manger</button> 
+      <button mat-menu-item>Expense Report </button> 
+      <button mat-menu-item>POS Manger </button> 
+      <button mat-menu-item> E- Bill</button>
+      <button mat-menu-item>Partnership Manger</button>
+      <button mat-menu-item> Partnership Report</button>
+      <button mat-menu-item> Accounting Manger</button>
+      <button mat-menu-item>Accounting Report</button>
+
+
+
+     </mat-menu>
+
+
+    
+    </div>
+    <div class="text-center">
+      <button mat-button class="text-light" [matMenuTriggerFor]="hrm">HRM</button>
+      <mat-menu #hrm="matMenu">
+        <button mat-menu-item> HR Manger </button>
+        <button mat-menu-item> HR Reports </button>  
+        <button mat-menu-item> Payroll Manger </button> 
+        <button mat-menu-item> Payroll Report </button> 
+      
+  
+  
+       </mat-menu>
+    </div>
+
+  
+
+  
+  
+    </mat-drawer>
+    <div class="example-sidenav-content">
+      <router-outlet></router-outlet>
+    </div>
+    
+  
+  </mat-drawer-container>

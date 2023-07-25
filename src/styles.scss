@@ -8,35 +8,55 @@
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
 @include mat.core();
-
+// regular style toast
+@import 'ngx-toastr/toastr';
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$dashboard-primary: mat.define-palette(mat.$indigo-palette);
-$dashboard-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$project-primary: mat.define-palette(mat.$indigo-palette);
+$project-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$dashboard-warn: mat.define-palette(mat.$red-palette);
+$project-warn: mat.define-palette(mat.$red-palette);
+
+$project-info: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$dashboard-theme: mat.define-light-theme((
+$project-theme: mat.define-light-theme((
   color: (
-    primary: $dashboard-primary,
-    accent: $dashboard-accent,
-    warn: $dashboard-warn,
+    primary: $project-primary,
+    accent: $project-accent,
+    warn: $project-warn,
+    info: $project-info,
   )
 ));
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-component-themes($dashboard-theme);
+@include mat.all-component-themes($project-theme);
 
-// regular style toast
-@import 'ngx-toastr/toastr';
+/* You can add global styles to this file, and also import other style files */
 
-.mt-50{
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.modal-backdrop.show {
+  --bs-backdrop-opacity: 0.5;
+}
+
+
+
+//  $red-palette, $pink-palette, $indigo-palette,
+  // $purple-palette, $deep-purple-palette, $blue-palette, $light-blue-palette, $cyan-palette,
+  // $teal-palette, $green-palette, $light-green-palette, $lime-palette, $yellow-palette,
+  // $amber-palette, $orange-palette, $deep-orange-palette, $brown-palette, $grey-palette,
+  // $gray-palette, $blue-grey-palette, $blue-gray-palette, $light-theme-background-palette,
+  // $dark-theme-background-palette, $light-theme-foreground-palette, $dark-theme-foreground-palette
+
+
+  .mt-50{
     margin-top: 50px;
 }
 .form-group{
@@ -53,13 +73,10 @@ label{
     border: 1px solid #3f51b5a3 !important;
   }
 .form-control:focus{
-border-color: goldenrod !important;
+border-color: #3f51b5a3 !important;
 box-shadow: none !important;
 }
-body{
-  
-    font-family: 'Poppins', sans-serif !important;
-}
+
 .edit {
   background: #9d4778;
   padding: 7px 7px;
@@ -73,23 +90,21 @@ body{
     color: white;
     border-radius: 4px;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .table-heading{
-    background: rgba(0, 0, 0, 0.87);
-    color: white;
+  background: rgba(0, 0, 0, 0.87);
+  color: white;
 }
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+-webkit-appearance: none;
+margin: 0;
 }
 
 /* Firefox */
 input[type=number] {
-  -moz-appearance: textfield;
+-moz-appearance: textfield;
 }
 
 
@@ -99,43 +114,43 @@ input[type=number] {
 
 }
 .btn-sub{
-  background: rgb(174 128 44);
-  border: none;
-  width: 100%;
-  border-radius: 18px;
+background:#0a1e3c;
+border: none;
+width: 100%;
+border-radius: 18px;
 border:none;
 width: 100%;
-  border-radius: 18px;
-  span{
-    color: white;
-  }
+border-radius: 18px;
+span{
+  color: white;
 }
-  .btn-sub:hover{
-    background: linear-gradient(187deg, #A14177, #aa5484, #903a6b, #592442);
-    
-  }
-  h2 {
-    background: linear-gradient(187deg, #A14177, #aa5484, #903a6b, #592442);
-    color: white;
+}
+.btn-sub:hover{
+  background: linear-gradient(187deg, #A14177, #aa5484, #903a6b, #592442);
+  
+}
+h2 {
+  background: #0a1e3c;
+  color: white;
 
-    /* border-top-right-radius: 50px; */
-    border-top-right-radius: 3px;
-    border-top-left-radius: 3px;
+  /* border-top-right-radius: 50px; */
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
 }
-  .card {
-    // border-radius: 0px 50px;
-    box-shadow: 1px 2px 6px #4e4d4b;
-    margin-bottom: 5px;
-    padding: 0px;
+.card {
+  // border-radius: 0px 50px;
+  box-shadow: 1px 2px 6px #4e4d4b;
+  margin-bottom: 5px;
+  padding: 0px;
 }
 
 td{
-  vertical-align:middle;
+vertical-align:middle;
 }
 
 // table design
 .border-primary {
-  --bs-border-opacity: 1;
-  /* border-color: rgba(var(--bs-primary-rgb),var(--bs-border-opacity))!important; */
-  border-color: #9C27B0 !important;
+--bs-border-opacity: 1;
+/* border-color: rgba(var(--bs-primary-rgb),var(--bs-border-opacity))!important; */
+border-color: #9C27B0 !important;
 }

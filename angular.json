@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "dashboard": {
+    "project": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/dashboard",
+            "outputPath": "dist/project",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -30,17 +30,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "node_modules/ngx-toastr/toastr.css",
-              "node_modules/datatables.net-dt/css/jquery.dataTables.css"
-
-
+              "src/styles.scss"
             ],
-            "scripts": [
-              "node_modules/jquery/dist/jquery.js",
-
-              "node_modules/datatables.net/js/jquery.dataTables.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -48,12 +40,12 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "5mb"
+                  "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "5mb",
-                  "maximumError": "10mb"
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
               ],
               "outputHashing": "all"
@@ -73,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "dashboard:build:production"
+              "browserTarget": "project:build:production"
             },
             "development": {
-              "browserTarget": "dashboard:build:development"
+              "browserTarget": "project:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "dashboard:build"
+            "browserTarget": "project:build"
           }
         },
         "test": {
@@ -110,6 +102,6 @@
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": "1b3283df-c80c-4582-818e-5fe7af7ab4fc"
   }
 }
